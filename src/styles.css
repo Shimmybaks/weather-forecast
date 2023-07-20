@@ -14,7 +14,7 @@ body {
 }
 
 h1 {
-    color: #878787;
+    color: black;
     font-size: 30px;
     font-weight: 100;
     line-height: 28px;
@@ -28,7 +28,7 @@ ul {
 
 li {
     list-style: none;
-    color: #878787;
+    color: black;
     font-size: 16px;
     text-transform: capitalize;
     font-weight: 100;
@@ -52,7 +52,7 @@ a :hover {
 
 .weather-forecast {
     padding: 20px;
-    border: 1px solid gray;
+    border: 1px solid black;
     border-radius: 4px;
 }
 
