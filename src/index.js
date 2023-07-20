@@ -49,7 +49,6 @@ function setDate(timestamp) {
 
     }
 }
-displayForecast();
 function showTemperature(response) {
     let temperaturePart = document.querySelector("#temp");
     celsiusPart = response.data.temperature.current;
