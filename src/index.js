@@ -22,13 +22,14 @@ function setDate(timestamp) {
 
     function displayForecast() {
         let forecastElement = document.querySelector("#forecast");
-        let days = ["Thu", "Fri", "Sat", "Sun"];
 
-        let forecastHTML = `<div class="row">`;
+
+        let days = ["Thu", "Fri", "Sat", "Sun"];
         days.forEach(function (day) {
             forecastHTML =
                 forecastHTML +
                 `
+                
       <div class="col-2">
         <div class="weather-forecast-date">${day}</div>
         <img
