@@ -46,6 +46,8 @@ function setDate(timestamp) {
         });
         forecastHTML = forecastHTML + `</div>`;
         forecastElement.innerHTML = forecastHTML;
+        console.log(forecastHTML)
+
 
     }
 }
@@ -107,3 +109,4 @@ let celsiusTemperature = document.querySelector("#celsius");
 celsiusTemperature.addEventListener("click", showCelsiusTemperature);
 
 displaySearch("Kinshasa");
+displayForecast();
