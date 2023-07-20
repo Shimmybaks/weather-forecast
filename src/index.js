@@ -109,4 +109,3 @@ let celsiusTemperature = document.querySelector("#celsius");
 celsiusTemperature.addEventListener("click", showCelsiusTemperature);
 
 displaySearch("Kinshasa");
-displayForecast();
