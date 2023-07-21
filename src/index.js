@@ -19,18 +19,19 @@ function setDate(timestamp) {
     ];
     let day = days[now.getDay()];
     return `${day} ${hour}:${minute}`;
+}
 
-    function displayForecast(response) {
-        console.log(response.data.daily);
-        let forecastElement = document.querySelector("#forecast");
+function displayForecast(response) {
+    console.log(response.data.daily);
+    let forecastElement = document.querySelector("#Forecast");
 
-        let days = ["Thu", "Fri", "Sat", "Sun"];
+    let days = ["Thu", "Fri", "Sat", "Sun"];
 
-        let forecastHTML = `<div class="row">`;
-        days.forEach(function (day) {
-            forecastHTML =
-                forecastHTML +
-                `
+    let forecastHTML = `<div class="row">`;
+    days.forEach(function (day) {
+        forecastHTML =
+            forecastHTML +
+            `
       <div class="col-2">
         <div class="weather-forecast-date">${day}</div>
         <img
@@ -44,19 +45,20 @@ function setDate(timestamp) {
         </div>
       </div>
   `;
-        });
+    });
 
-        forecastHTML = forecastHTML + `</div>`;
-        forecastElement.innerHTML = forecastHTML;
-    }
-
-    function getForecast(coordinates) {
-        console.log(coordinates);
-        let apiKey = "9cb72bec958f8fb02391985ed7b219d2";
-        let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
-        axios.get(apiUrl).then(displayForecast);
-    }
+    forecastHTML = forecastHTML + `</div>`;
+    forecastElement.innerHTML = forecastHTML;
 }
+
+
+function getForecast(coordinates) {
+    console.log(coordinates);
+    let apiKey = "9cb72bec958f8fb02391985ed7b219d2";
+    let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.latitude}&lon=${coordinates.longitude}&appid=${apiKey}&units=metric`;
+    axios.get(apiUrl).then(displayForecast);
+}
+
 function showTemperature(response) {
     let temperaturePart = document.querySelector("#temp");
     celsiusPart = response.data.temperature.current;
@@ -77,6 +79,8 @@ function showTemperature(response) {
         `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`
     );
     iconPart.setAttribute("alt", response.data.condition.description);
+
+    getForecast(response.data.coordinates);
 }
 function displaySearch(city) {
     let apiKey = "4b2293d9f6540807t7f02oa2fa78a0f9";
