@@ -9,15 +9,16 @@
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="src/styles.css" />
     <title>Weather App</title>
 </head>
 
 <body>
-    <video autoplay loop muted id="weatherVideo">
-        <source id="dayVideo" src="videos/sky-clouds.mp4" type="video/mp4">
-    </video>
     <div class="container">
+        <video autoplay loop muted id="weatherVideo">
+            <source id="dayVideo" src="videos/sky-clouds.mp4" type="video/mp4">
+        </video>
+
         <div class="weather-app-wrapper">
             <div class="weather-app">
                 <form id="search-form" class="mb-3">
@@ -30,34 +31,43 @@
                             <input type="submit" value="Search" class="btn btn-primary w-100" />
                         </div>
                     </div>
-                </form>
-                <div class="overview">
-                    <h1 id="city"></h1>
-                    <ul>
-                        <li>Last updated: <span id="date"></span></li>
-                        <li id="description"></li>
-                    </ul>
-                </div>
-                <div class="row">
-                    <div class="col-6">
-                        <div class="clearfix weather-temperature">
-                            <img src="" alt="Clear" id="icon" class="float-left" />
-                            <div class="float-left">
-                                <strong id="temperature"></strong>
-                                <span class="units"> °C</span>
-                            </div>
+            </div>
+            </form>
+            <div class="overview">
+                <h1 id="city"></h1>
+                <ul>
+                    <li>Last updated: <span id="date"></span></li>
+                    <li id="description"></li>
+                </ul>
+            </div>
+            <div class="row">
+                <div class="col-6">
+                    <div class="clearfix weather-temperature">
+                        <img src="" alt="Clear" id="icon" class="float-left" />
+                        <div class="float-left">
+                            <strong id="temperature"></strong>
+                            <span class="units"> °C</span>
                         </div>
                     </div>
-                    <div class="col-6">
-                        <ul>
-                            <li>Humidity: <span id="humidity"></span>%</li>
-                            <li>Wind: <span id="wind"></span> km/h</li>
-                        </ul>
-                    </div>
                 </div>
-                <div class="weather-forecast" id="forecast"></div>
+                <div class="col-6">
+                    <ul>
+                        <li>Humidity: <span id="humidity"></span>%</li>
+                        <li>Wind: <span id="wind"></span> km/h</li>
+                    </ul>
+                </div>
             </div>
-            <small>
+
+            <div class="weather-forecast" id="forecast"></div>
+            <div class="row">
+                <div class="col-2">
+
+                </div>
+            </div>
+        </div>
+
+        <small>
+            <p>
                 This project was coded by Shimei Bakala
                 <a href="https://github.com/Shimmybaks/weather-forecast" target="_blank">open source
                     code</a>
@@ -65,8 +75,9 @@
                 <a href="https://64b900d59aae460008c45f4f--steady-baklava-1e6b6b.netlify.app/"
                     target="_blank">netlify.com</a>
 
-            </small>
-        </div>
+        </small>
+        </p>
+    </div>
     </div>
     <script src="src/index.js"></script>
 </body>

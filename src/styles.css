@@ -1,4 +1,4 @@
-video {
+Video {
     object-fit: cover;
     height: 100%;
     width: 100%;
@@ -6,15 +6,17 @@ video {
     position: absolute;
     top: 0;
     bottom: 0;
+    right: 0;
+    left: 0;
 }
 
 body {
     font-family: arial, sans-serif;
-    background-color: aqua;
 }
 
+
 h1 {
-    color: #878787;
+    color: #ad4545;
     font-size: 24px;
     font-weight: 100;
     line-height: 28px;
@@ -31,7 +33,7 @@ li {
     margin: 0;
     padding: 0;
 
-    color: rgb(135, 135, 135);
+    color: rgb(180, 36, 36);
     font-size: 16px;
     font-weight: 100;
     line-height: 19px;
@@ -39,6 +41,15 @@ li {
 
 li:first-letter {
     text-transform: capitalize;
+}
+
+a {
+    text-decoration: none;
+    text-align: center;
+}
+
+a :hover {
+    text-decoration: underline;
 }
 
 .weather-app-wrapper {
@@ -102,4 +113,8 @@ li:first-letter {
 
 .weather-forecast-temperatures {
     font-size: 13px;
+}
+
+p {
+    text-align: center;
 }

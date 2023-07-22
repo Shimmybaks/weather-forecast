@@ -8,7 +8,7 @@ function formatDate(timestamp) {
     const hours = date.getHours().toString().padStart(2, "0");
     const minutes = date.getMinutes().toString().padStart(2, "0");
 
-    let days = [
+    const days = [
         "Sunday",
         "Monday",
         "Tuesday",
@@ -17,21 +17,21 @@ function formatDate(timestamp) {
         "Friday",
         "Saturday",
     ];
-    let day = days[date.getDay()];
+    const day = days[date.getDay()];
 
     return `${day} ${hours}:${minutes}`;
 }
 
 function formatDay(timestamp) {
-    let date = new Date(timestamp * 1000);
-    let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+    const date = new Date(timestamp * 1000);
+    const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
     return days[date.getDay()];
 }
 
 async function displayForecast(response) {
-    let forecast = response.data.daily;
-    let forecastElement = document.querySelector("#forecast");
+    const forecast = response.data.daily;
+    const forecastElement = document.querySelector("#forecast");
     let forecastHTML = `<div class="row">`;
 
     forecast.forEach((forecastDay, index) => {
@@ -60,7 +60,7 @@ async function displayForecast(response) {
 
 async function getForecast(coordinates) {
     try {
-        let response = await axios.get(
+        const response = await axios.get(
             `${config.apiUrl}/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${config.apiKey}&units=metric`
         );
         displayForecast(response);
@@ -70,15 +70,15 @@ async function getForecast(coordinates) {
 }
 
 async function displayTemperature(response) {
-    let temperatureElement = document.querySelector("#temperature");
-    let cityElement = document.querySelector("#city");
-    let descriptionElement = document.querySelector("#description");
-    let humidityElement = document.querySelector("#humidity");
-    let windElement = document.querySelector("#wind");
-    let dateElement = document.querySelector("#date");
-    let iconElement = document.querySelector("#icon");
+    const temperatureElement = document.querySelector("#temperature");
+    const cityElement = document.querySelector("#city");
+    const descriptionElement = document.querySelector("#description");
+    const humidityElement = document.querySelector("#humidity");
+    const windElement = document.querySelector("#wind");
+    const dateElement = document.querySelector("#date");
+    const iconElement = document.querySelector("#icon");
 
-    let celsiusTemperature = response.data.main.temp;
+    const celsiusTemperature = response.data.main.temp;
 
     temperatureElement.innerHTML = Math.round(celsiusTemperature);
     cityElement.innerHTML = response.data.name;
@@ -97,7 +97,7 @@ async function displayTemperature(response) {
 
 async function search(city) {
     try {
-        let response = await axios.get(
+        const response = await axios.get(
             `${config.apiUrl}/weather?q=${city}&appid=${config.apiKey}&units=metric`
         );
         displayTemperature(response);
@@ -108,11 +108,11 @@ async function search(city) {
 
 function handleSubmit(event) {
     event.preventDefault();
-    let cityInputElement = document.querySelector("#city-input");
+    const cityInputElement = document.querySelector("#city-input");
     search(cityInputElement.value);
 }
 
-let form = document.querySelector("#search-form");
+const form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
 
-search("kinshasa");
+search("Kinshasa");
