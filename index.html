@@ -18,44 +18,59 @@
         <source id="dayVideo" src="videos/sky-clouds.mp4" type="video/mp4">
     </video>
     <div class="container">
-        <div class="weather-app-wrapper">
-            <div class="weather-app">
-                <form id="search-form" class="mb-3">
+        <div class="weather-forecast-site">
+            <div class="weather-forecast">
+                <form id="search-form" class="mb-2">
                     <div class="row">
                         <div class="col-9">
-                            <input type="search" placeholder="Type a city.." class="form-control" id="city-input"
-                                autocomplete="off" />
+                            <input type="search" placeholder="Enter a city..." class="form-control" id="city-input" />
                         </div>
                         <div class="col-3">
-                            <input type="submit" value="Search" class="btn btn-primary w-100" />
+                            <input type="submit" value="Search" class="btn btn-primary w-100" id="search-input" />
                         </div>
                     </div>
                 </form>
-                <div class="overview">
+                <div class="location">
                     <h1 id="city"></h1>
                     <ul>
-                        <li>Last updated: <span id="date"></span></li>
-                        <li id="description"></li>
+                        <li>Last Updated: <span id="date"></span></li>
+                        <li id="condition">Cloudy</li>
                     </ul>
                 </div>
                 <div class="row">
                     <div class="col-6">
-                        <div class="clearfix weather-temperature">
-                            <img src="" alt="Clear" id="icon" class="float-left" />
-                            <div class="float-left">
-                                <strong id="temperature"></strong>
-                                <span class="units"> °C</span>
+                        <div class="d-flex weather-temperature">
+                            <img src="" alt="cloudy" id="icon" />
+                            <div>
+                                <strong id="temp"></strong><span class="nums"><a href="#" id="celsius"
+                                        class="active">°C</a>|<a href="#" id="fahrenhit">°F</a></span>
                             </div>
                         </div>
                     </div>
                     <div class="col-6">
                         <ul>
-                            <li>Humidity: <span id="humidity"></span>%</li>
-                            <li>Wind: <span id="wind"></span> km/h</li>
+                            <li>Humidity: <span id="humii"></span>%</li>
+                            <li>Wind: <span id="speed"></span>km/h</li>
                         </ul>
                     </div>
                 </div>
-                <div class="weather-forecast" id="forecast"></div>
+                <div class="weather-forecast">
+                    <div class="row">
+                        <div class="col-2">
+                            <div class="weather-forecast-date">
+                                Thu
+                            </div>
+                            <img src="http://openweathermap.org/img/wn/50d@2x.png" alt="" width="36" />
+
+                            <div class="weather-forecast-temperatures">
+                                <span class="weather-forecast-temperature-max"> 18° </span>
+                                <span class="weather-forecast-temperature-min"> 12° </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="weather-forecast" id="Forecast"></div>
+
             </div>
             <small>
                 This project was coded by Shimei Bakala
@@ -63,7 +78,6 @@
                 and hosted on
                 <a href="https://64b900d59aae460008c45f4f--steady-baklava-1e6b6b.netlify.app/"
                     target="_blank">netlify.com</a>
-
             </small>
         </div>
     </div>
