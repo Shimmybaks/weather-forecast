@@ -1,3 +1,7 @@
+body {
+    font-family: arial, sans-serif;
+}
+
 video {
     object-fit: cover;
     height: 100%;
@@ -8,9 +12,7 @@ video {
     bottom: 0;
 }
 
-body {
-    font-family: arial, sans-serif;
-}
+
 
 h1 {
     color: #878787;
