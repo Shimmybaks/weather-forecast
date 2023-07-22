@@ -9,13 +9,12 @@ video {
 }
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
-
+    font-family: arial, sans-serif;
 }
 
 h1 {
-    color: black;
-    font-size: 30px;
+    color: #878787;
+    font-size: 24px;
     font-weight: 100;
     line-height: 28px;
     margin-bottom: 0;
@@ -28,59 +27,56 @@ ul {
 
 li {
     list-style: none;
-    color: black;
-    font-size: 16px;
-    text-transform: capitalize;
-    font-weight: 100;
-    line-height: 18px;
     margin: 0;
     padding: 0;
+
+    color: rgb(135, 135, 135);
+    font-size: 16px;
+    font-weight: 100;
+    line-height: 19px;
 }
 
-a {
-    text-decoration: none;
+li:first-letter {
+    text-transform: capitalize;
 }
 
-a :hover {
-    text-decoration: underline;
-}
-
-.weather-forecast-site {
+.weather-app-wrapper {
     max-width: 600px;
     margin: 30px auto;
 }
 
-.weather-forecast {
+.weather-app {
     padding: 20px;
-    border: 1px solid black;
-    border-radius: 4px;
+    border: 1px solid #dadde1;
+    border-radius: 5px;
+    background: radial-gradient(592px at 48.2% 50%, rgba(255, 255, 249, 0.6) 0%, rgb(160, 199, 254) 74.6%);
 }
 
-.location {
+.overview {
     margin-bottom: 20px;
 }
 
 .weather-temperature img {
-    margin-right: 10px;
-    height: 60px;
-    width: 60px;
+    margin-right: 5px;
+    height: 64px;
+    width: 64px;
 }
 
 .weather-temperature strong {
-    color: black;
+    color: rgb(33, 33, 33);
     font-size: 64px;
+    line-height: 1;
     font-weight: 400;
-    line-height: 64px;
 }
 
-.weather-temperature span {
+.weather-temperature .units {
     position: relative;
     font-size: 16px;
-    top: -32px;
+    top: -34px;
 }
 
 .weather-temperature .active {
-    color: black;
+    color: rgb(33, 33, 33);
     cursor: default;
 }
 
@@ -91,15 +87,18 @@ a :hover {
 .weather-forecast {
     margin-top: 20px;
     text-align: center;
+    color: #000;
 }
 
 .weather-forecast-date {
     font-size: 16px;
-    color: #dadde1;
+    opacity: 0.5;
+}
 
+.weather-forecast-temperature-min {
+    opacity: 0.5;
 }
 
 .weather-forecast-temperatures {
     font-size: 13px;
-
 }
